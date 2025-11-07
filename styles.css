@@ -1,0 +1,194 @@
+/* Styles pour l'overlay 654 Extension - Modal fullpage */
+
+/* Backdrop fullpage */
+.ext654-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(4px);
+  z-index: 2147483647; /* Max z-index */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: ext654-fadeIn 0.3s ease;
+}
+
+@keyframes ext654-fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal */
+.ext654-modal {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 90%;
+  animation: ext654-slideUp 0.4s ease;
+  overflow: hidden;
+}
+
+@keyframes ext654-slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header avec dégradé 654 */
+.ext654-modal-header {
+  background: linear-gradient(135deg, #8B5CF6 0%, #22D3EE 100%);
+  padding: 24px 28px;
+  color: white;
+}
+
+.ext654-modal-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Body */
+.ext654-modal-body {
+  padding: 28px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.ext654-modal-body p {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.ext654-modal-body p:last-child {
+  margin-bottom: 0;
+}
+
+.ext654-modal-detail {
+  font-size: 14px !important;
+  color: #666 !important;
+}
+
+/* Footer */
+.ext654-modal-footer {
+  padding: 0 28px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Bouton */
+.ext654-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px 24px;
+  background: linear-gradient(135deg, #8B5CF6 0%, #22D3EE 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+  transition: all 0.2s ease;
+}
+
+.ext654-button:hover {
+  box-shadow: 0 6px 16px rgba(139, 92, 246, 0.4);
+  transform: translateY(-1px);
+}
+
+.ext654-button:active {
+  transform: translateY(0);
+}
+
+.ext654-button svg {
+  flex-shrink: 0;
+}
+
+.ext654-button-loading {
+  background: linear-gradient(135deg, #666 0%, #888 100%);
+  cursor: wait;
+  opacity: 0.8;
+  animation: ext654-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes ext654-pulse {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.ext654-button-loading:hover {
+  transform: none;
+}
+
+.ext654-button-success {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.ext654-button-error {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.ext654-button:disabled {
+  cursor: not-allowed;
+}
+
+/* Status */
+.ext654-status {
+  text-align: center;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.ext654-status-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ext654-status-success {
+  color: #10b981;
+  background: #d1fae5;
+}
+
+.ext654-status-error {
+  color: #ef4444;
+  background: #fee2e2;
+}
+
+.ext654-status-loading {
+  color: #6b7280;
+  background: #f3f4f6;
+}

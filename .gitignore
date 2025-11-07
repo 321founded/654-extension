@@ -1,0 +1,19 @@
+# Extension Chrome
+*.crx
+*.pem
+*.zip
+
+# Clés d'extension (NE PAS COMMITER)
+key.pem
+key.txt
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log

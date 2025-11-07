@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "654 LinkedIn Session Extractor",
+  "version": "1.0.0",
+  "description": "Extension interne 321 pour extraire cookies et user agent LinkedIn",
+
+  "permissions": [
+    "cookies",
+    "activeTab",
+    "storage",
+    "identity"
+  ],
+
+  "host_permissions": [
+    "*://*.linkedin.com/*"
+  ],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.linkedin.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
